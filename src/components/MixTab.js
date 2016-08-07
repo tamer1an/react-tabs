@@ -48,6 +48,11 @@ module.exports = React.createClass({
     }
   },
 
+  closeTab(){
+      //debugger
+      this.props.close()
+  },
+
   render() {
     const {
       selected,
@@ -63,6 +68,8 @@ module.exports = React.createClass({
       ...attributes } = this.props;
 
     delete attributes.focus;
+
+    //debugger
 
     return (
 
@@ -84,8 +91,8 @@ module.exports = React.createClass({
         tabIndex={selected ? '0' : null}
       >
         {children}
-        {invisible ? ' Y' : false}
-        {closable ? ' X' : false}
+        {invisible ? ' ' : false}
+        {closable ? <span onClick={this.closeTab}>X</span> : false}
       </li>
     );
   },

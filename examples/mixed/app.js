@@ -5,21 +5,22 @@ import { Tab, Tabs, TabList, TabPanel } from '../../src/main';
 import { MixTab, MixTabs} from '../../src/main';
 
 Modal.setAppElement(document.getElementById('example'));
-Modal.injectCSS();
 
 ReactDOM.render(
 
-  <MixTabs selectedIndex='2'>
+  <MixTabs selectedIndex={2}>
       <TabList>
-
             <MixTab closable>
                 first
             </MixTab>
 
-            <MixTab invisible>
-                second
+            <MixTab invisible disabled>
+               <input type="checkbox" />
             </MixTab>
 
+             <MixTab>
+                3: badge <span>(1)</span>
+            </MixTab>
       </TabList>
 
       <TabPanel> first content </TabPanel>

@@ -23,7 +23,7 @@ module.exports = function childrenPropTypes(props, propName) {
           return;
         }
 
-        if (c.type === Tab) {
+        if (c.type === Tab || c.type === MixTab) {
           tabsCount++;
         } else {
           error = new Error(

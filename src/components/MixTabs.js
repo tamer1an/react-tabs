@@ -162,6 +162,10 @@ module.exports = React.createClass({
     return this.refs[`panels-${index}`];
   },
 
+  closeTab(){
+    alert('bar')
+  },
+
   getChildren() {
     let index = 0;
     let count = 0;
@@ -209,7 +213,10 @@ module.exports = React.createClass({
 
             index++;
 
+            console.log(tab)
             return cloneElement(tab, {
+
+              close : this.closeTab,
               ref,
               id,
               panelId,
